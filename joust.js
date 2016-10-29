@@ -2,17 +2,17 @@
 var C = {
   //background
   background: {
-    image: 'art2.jpg',
+    image: 'joustmap.gif',
     scale: 1
   },
   //player
   player: {
-    image: 'turtle1.png',
-    width: 63,
+    image: 'knight1.png',
+    width: 64,
     height: 64,
     frames: 1,
-    startx: 400,
-    starty: 400,
+    startx: 1500,
+    starty: 200,
     bounce: 0.3,
     drag: 3000,
     speed: 300
@@ -75,7 +75,7 @@ class PlayState {
     game.physics.startSystem(Phaser.Physics.P2JS);
     // background
     this.background = this.add.tileSprite(0,0,1600,1600,'background');
-    this.game.world.setBounds(0, 0, 1600, 1600);
+    this.game.world.setBounds(0, 0, 1600, 600);
     //this.background.autoScroll(0,C.background.scroll);
     this.background.scale.set(C.background.scale);
     
@@ -88,9 +88,7 @@ class PlayState {
     this.player.body.fixedRotation = true;
     console.log(this.player);
     this.game.camera.follow(this.player);
-    //this.player.smoothed = false; 
-    //this.player.scale.set(3);
-    //this.player.anchor.set(0.5,0.5);
+    
     
     //Add keys
     this.right = game.input.keyboard.addKey(Phaser.KeyCode.D);
@@ -100,15 +98,6 @@ class PlayState {
   }
 
   update() {
-    //angle
-    //if (this.left.isDown) {
-    //  this.player.angle += 10;
-    //  console.log("rotating left");
-    //}   //ship movement
-    //else if (this.right.isDown){this.player.body.rotateRight(100);}
-    //else {this.player.body.setZeroRotation();}
-    //if (this.up.isDown){this.player.body.thrust(400);}
-    //else if (this.down.isDown){this.player.body.reverse(400);}
     
     //Movementv
     this.player.body.velocity.x = 0;
